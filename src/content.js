@@ -1,5 +1,5 @@
 /* ============================================================
-   LeseAbenteuer – Inhalte & Internationalisierung
+   LeseAbenteuer \u2013 Inhalte & Internationalisierung
    ------------------------------------------------------------
    Alles Inhaltliche liegt hier, getrennt von der Logik (app.js).
 
@@ -13,7 +13,7 @@
      Bei Schwierigkeiten zeigt die App automatisch die leichte
      Variante; das Kind kann auch manuell umschalten.
 
-   AUFGABENTYPEN (alle als Multiple-Choice mit 4–6 Optionen):
+   AUFGABENTYPEN (alle als Multiple-Choice mit 4\u20136 Optionen):
      quiz, predict, vocab, missing, syllable, wordimage,
      sentence, spellfix, retell, detector (Metalldetektor-Suche).
    Aufgabe: { type, q, options[], answer, hint?, fact?, word? }
@@ -21,7 +21,7 @@
    WIEDERKEHRENDE FIGUREN (dosiert eingewoben):
      Mira, Coco, Lina, Noa, Karim (Held:innen je Welt) +
      Freunde: Gusti, Dana, Hannah, Luki, Marie, Anton, Vincent, Lotti
-     Wali – der Kuschelwal · Metalldetektor „Pieper“
+     Wali \u2013 der Kuschelwal \u00b7 Metalldetektor \u201ePieper\u201c
    ============================================================ */
 
 const SUPPORTED_LANGS = [
@@ -145,7 +145,7 @@ const BADGES = {
 };
 
 /* ============================================================
-   WELTEN & GESCHICHTEN  (level 1–3 steuert die Lesezeit)
+   WELTEN & GESCHICHTEN  (level 1\u20133 steuert die Lesezeit)
    ============================================================ */
 const CONTENT = {
   worlds: [
@@ -739,4 +739,31 @@ const CONTENT = {
                 { type: "quiz", q: { de: "Warum jagt der Fennek nachts?", en: "Why does the fennec hunt at night?" },
                   options: { de: ["Tags\u00fcber ist es zu hei\u00df", "Nachts ist es heller", "Er kann nicht schlafen", "Er mag den Mond"], en: ["By day it is too hot", "At night it is brighter", "He cannot sleep", "He likes the moon"] }, answer: 0 },
                 { type: "spellfix", q: { de: "Welches Wort ist falsch geschrieben?", en: "Which word is spelled wrong?" },
-                  options: { de: ["Wuesten
+                  options: { de: ["Wuestenfux", "Ohren", "Nacht", "Sand"], en: ["Dessert fox", "Ears", "Night", "Sand"] }, answer: 0,
+                  hint: { de: "Fuchs schreibt man mit chs.", en: "A sandy place is \u0027desert\u0027 (one s); \u0027dessert\u0027 is the sweet!" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  /* ---------- \u201eEntdecken\u201c: echtes Sachwissen (Lexikon-H\u00e4ppchen) ---------- */
+  discover: [
+    { emoji: "\uD83D\uDC0B", de: "Der Blauwal ist das gr\u00f6\u00dfte Tier der Welt \u2013 sein Herz ist so gro\u00df wie ein Auto.", en: "The blue whale is the largest animal on Earth \u2013 its heart is as big as a car." },
+    { emoji: "\uD83D\uDC19", de: "Ein Krake hat drei Herzen und blaues Blut.", en: "An octopus has three hearts and blue blood." },
+    { emoji: "\uD83C\uDF0D", de: "Die Erde dreht sich einmal am Tag um sich selbst.", en: "The Earth spins around once every day." },
+    { emoji: "\uD83D\uDC1D", de: "Bienen tanzen, um anderen den Weg zu Blumen zu zeigen.", en: "Bees dance to show others the way to flowers." },
+    { emoji: "\uD83E\uDD92", de: "Eine Giraffe hat genauso viele Halswirbel wie du: sieben.", en: "A giraffe has as many neck bones as you: seven." },
+    { emoji: "\uD83C\uDF19", de: "Auf dem Mond gibt es keine Luft und keinen Wind.", en: "There is no air and no wind on the Moon." },
+    { emoji: "\uD83D\uDC27", de: "Pinguine k\u00f6nnen nicht fliegen, aber super schwimmen.", en: "Penguins cannot fly, but they swim brilliantly." },
+    { emoji: "\uD83C\uDF33", de: "B\u00e4ume machen aus Sonnenlicht ihre eigene Nahrung.", en: "Trees make their own food from sunlight." },
+    { emoji: "\uD83E\uDD8B", de: "Schmetterlinge schmecken mit ihren F\u00fc\u00dfen.", en: "Butterflies taste with their feet." },
+    { emoji: "\uD83D\uDC2A", de: "Kamele speichern in ihrem H\u00f6cker Fett, nicht Wasser.", en: "Camels store fat in their hump, not water." },
+    { emoji: "\uD83E\uDD8A", de: "Der W\u00fcstenfuchs Fennek h\u00f6rt mit seinen gro\u00dfen Ohren Insekten unter dem Sand.", en: "The fennec fox hears insects under the sand with its big ears." },
+    { emoji: "\uD83D\uDE80", de: "Eine Rakete muss sehr schnell sein, um ins Weltall zu fliegen.", en: "A rocket must be very fast to fly into space." },
+    { emoji: "\uD83E\uDD9C", de: "Manche Papageien k\u00f6nnen W\u00f6rter nachsprechen.", en: "Some parrots can copy words." },
+    { emoji: "\uD83D\uDD0D", de: "Mit einem Metalldetektor wurden schon ganze Schatzkisten gefunden.", en: "Whole treasure chests have been found with metal detectors." }
+  ]
+};
